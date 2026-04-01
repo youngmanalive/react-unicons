@@ -1,64 +1,67 @@
 # React Unicons
 
+> **This is a fork of [`@iconscout/react-unicons`](https://github.com/Iconscout/react-unicons).**
+>
+> The original package hasn't been updated on npm since v2.0.1 and triggers the
+> `"Support for defaultProps will be removed from function components"` warning
+> in React 18.3+ / React 19. This fork fixes that, adds TypeScript declarations,
+> and is published as `@youngmanalive/react-unicons`.
 
-4,500+ Pixel-perfect vector icons as React Components. These icons are designed by [IconScout](https://iconscout.com).
+1,206 pixel-perfect vector icons as React components. Icons designed by [IconScout](https://iconscout.com).
 
-## Getting Started
-You can easily install [react-unicons](https://iconscout.com/unicons) using npm.
+## What's different from the original?
+
+- **No more `defaultProps`** -- uses ES6 default parameters instead, eliminating React 19 deprecation warnings.
+- **TypeScript support** -- ships with `.d.ts` declarations for full editor intellisense.
+- **Published and up to date** -- available on npm as `@youngmanalive/react-unicons`.
+
+## Installation
+
 ```bash
-npm install --save @iconscout/react-unicons
-```
-Or using `yarn`
-```bash
-yarn add @iconscout/react-unicons
+npm install @youngmanalive/react-unicons
 ```
 
 ## Usage
-### Use individual icons
-```js
+
+### Individual icons (recommended for tree-shaking)
+
+```jsx
 import React from 'react';
-import UilReact from '@iconscout/react-unicons/icons/uil-react'
+import UilReact from '@youngmanalive/react-unicons/icons/uil-react';
 
 const App = () => {
-  return <UilReact size="140" color="#61DAFB" />
+  return <UilReact size="140" color="#61DAFB" />;
 };
 
 export default App;
-````
-
-You can customize icons as below:
-```html
-<Unicons.UilReact size="140" color="#61DAFB" />
 ```
 
-### Usage as full Package
-```js
+### Named imports from the barrel
+
+```jsx
 import React from 'react';
-import * as Unicons from '@iconscout/react-unicons';
+import { UilReact } from '@youngmanalive/react-unicons';
 
 const App = () => {
-  return <Unicons.UilReact />
+  return <UilReact size={140} color="#61DAFB" />;
 };
 
 export default App;
-````
+```
 
-### More ways
-- [React-native-unicons](https://github.com/Iconscout/react-native-unicons)
-- [Vue-unicons](https://github.com/antonreshetov/vue-unicons) by [Anton Reshetov](https://github.com/antonreshetov)
-- [Vector SVGs](https://iconscout.com/unicons)
-- [Icon Font](https://github.com/Iconscout/unicons)
+### Props
 
-## Contributing
-We will be happy to have community support for Unicons. Feel free to fork and create pull requests. We have given a small roadmap above so that you can help us build these features.
+| Prop | Type | Default |
+|------|------|---------|
+| `color` | `string` | `'currentColor'` |
+| `size` | `string \| number` | `24` |
+| ...rest | Any valid SVG attribute | -- |
 
-### Request icons
-Can't find the icon you are looking for? No worries, we will design it for you. And we'll be happy to design them in upcoming weeks.
+## Related
 
-[Request Icon](mailto:support@iconscout.com)
+- [Unicons](https://github.com/Iconscout/unicons) -- the SVG source icons
+- [Vue Unicons](https://github.com/antonreshetov/vue-unicons) by [Anton Reshetov](https://github.com/antonreshetov)
 
 ## License
-Unicons are Open Source icons and licensed under [IconScout Simple License](https://iconscout.com/licenses#simple_license). You're free to use these icons in your personal and commercial project. We would love to see the attribution in your app's **about** screen, but it's not mandatory.
-```html
-React Unicons by <a href="https://iconscout.com/">IconScout</a>
-```
+
+The underlying [Unicons](https://github.com/Iconscout/unicons) SVGs are licensed under [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0).

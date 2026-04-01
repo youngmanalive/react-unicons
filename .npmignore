@@ -1,2 +1,7 @@
 node_modules
 example
+build
+.gitignore
+.nvmrc
+webpack.config.js
+package-lock.json
